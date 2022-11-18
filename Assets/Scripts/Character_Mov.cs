@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.SceneManagement;
 
 public class Character_Mov : MonoBehaviour
 {
@@ -25,23 +26,15 @@ public class Character_Mov : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
-
     private void Update()
     {
         IsRunning(); // Sistema para correr
         
         if (IsGrounded()) // Sistema para atacar
         {
-            IsGroundAtacking();
-        }
-        if (!IsGrounded()) 
-        {
-            IsJumpAtack();
+            IsAtacking();
         }
 
-        //Debug.DrawRay(capsuleCollider.transform.position, Vector3.down, Color.red);//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        //Debug.Log(IsGrounded());// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        
         //Movimiento y rotacion
         Vector3 movementDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
         anim.SetFloat("Speed", movementDirection.z);
@@ -72,45 +65,25 @@ public class Character_Mov : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate((movementDirection * runSpeed) * Time.deltaTime);
-           // Debug.Log("IsRunning");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             anim.SetBool("Run", true);
         }
         else
         {
             anim.SetBool("Run", false);
-            //Debug.Log("IsNotRunning");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         }
     }
 
-    void IsGroundAtacking()
+    void IsAtacking()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            anim.SetBool("GroundAtk", true);
-            //Debug.Log("IsAtacking");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            anim.SetBool("Atk", true);
         }
         if (!Input.GetKeyDown(KeyCode.Mouse0))
         {
-            anim.SetBool("GroundAtk", false);
-            //Debug.Log("IsNotAtacking");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            anim.SetBool("Atk", false);
         }
-
 
     }
-    void IsJumpAtack()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            anim.SetBool("JumpAtack", true);
-            Debug.Log("IsJumpAtacking");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        }
-        if (!Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            anim.SetBool("JumpAtack", false);
-            Debug.Log("IsNotJumpAtacking");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        }
-    }
-
-
 
 }
