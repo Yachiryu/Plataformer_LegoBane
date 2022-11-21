@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Coins : MonoBehaviour
-{
+{ 
     public AudioClip audiofx;
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -14,6 +15,7 @@ public class Coins : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+               
         }
     }
 }

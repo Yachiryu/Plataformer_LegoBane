@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Moneda
   - Lava
+  - CheckP1
+  - CheckP2
+  - CheckP3
   layers:
   - Default
   - TransparentFX

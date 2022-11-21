@@ -7,6 +7,7 @@ public class ScorePoints : MonoBehaviour
 {
     private int puntaje;
     public TextMeshProUGUI puntajeText;
+    public GameOver gameOver;
     void Start()
     {
         puntaje = 0;
@@ -18,6 +19,19 @@ public class ScorePoints : MonoBehaviour
         {
             puntaje++;
             puntajeText.text = "" + puntaje;
+        }
+
+        if (other.gameObject.tag == "CheckP1")
+        {
+            gameOver.checkpIndex = 1;
+        }
+        if (other.gameObject.tag == "CheckP2")
+        {
+            gameOver.checkpIndex = 2;
+        }
+        if (other.gameObject.tag == "CheckP3")
+        {
+            gameOver.checkpIndex = 3;
         }
     }
 }
