@@ -17828,6 +17828,7 @@ MonoBehaviour:
   puntaje: 0
   puntajeText: {fileID: 1822885137}
   gameOver: {fileID: 1079299999}
+  scene: Level2
 --- !u!43 &1402570639
 Mesh:
   m_ObjectHideFlags: 0

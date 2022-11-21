@@ -6077,7 +6077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98642f97879f9de4d83b2ce0f5c4a563, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -111.45
+      value: -110.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98642f97879f9de4d83b2ce0f5c4a563, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15450,6 +15450,7 @@ MonoBehaviour:
   puntaje: 0
   puntajeText: {fileID: 1822885137}
   gameOver: {fileID: 1079299999}
+  scene: YouWin
 --- !u!1 &1416307156
 GameObject:
   m_ObjectHideFlags: 0
@@ -28229,6 +28230,10 @@ PrefabInstance:
       propertyPath: runSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 745536084562406617, guid: 96e0c8fa70958cf48b4a9b65d3c197d4, type: 3}
+      propertyPath: jumpAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 72a2c893c6b9b0b45acab6ad1c231a25, type: 3}
     - target: {fileID: 745536084562406617, guid: 96e0c8fa70958cf48b4a9b65d3c197d4, type: 3}
       propertyPath: jumpImpulse
       value: 5.8
