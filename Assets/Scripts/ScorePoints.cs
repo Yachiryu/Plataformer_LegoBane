@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScorePoints : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class ScorePoints : MonoBehaviour
     void Start()
     {
         puntaje = 0;
+    }
+    private void Update()
+    {
+        if (puntaje >= 3)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
