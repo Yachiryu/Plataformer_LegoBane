@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
 
 public class Character_Mov : MonoBehaviour
 {
     public Animator anim;
+    public AudioClip jumpAudio;
     
     [Header("Sistema de Movimiento")]
     [Range(0,5)]
@@ -45,6 +45,7 @@ public class Character_Mov : MonoBehaviour
         {
             rb.velocity = Vector3.up * jumpImpulse;
             anim.SetBool("Jump", true);
+            AudioSource.PlayClipAtPoint(jumpAudio, gameObject.transform.position);
         }
         if (!IsGrounded()) 
         {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ScorePoints : MonoBehaviour
 {
-    private int puntaje;
+    public int puntaje;
     public TextMeshProUGUI puntajeText;
     public GameOver gameOver;
     void Start()
@@ -18,6 +18,10 @@ public class ScorePoints : MonoBehaviour
         if (puntaje >= 3)
         {
             SceneManager.LoadScene("Level2");
+        }
+        if (puntaje >= 4)
+        {
+            SceneManager.LoadScene("YouWin");
         }
     }
 
